@@ -1,5 +1,6 @@
 from PIL import Image
 from textToImage import generateNFT
+import random
 
 ASCII_CHARS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
 
@@ -16,8 +17,40 @@ def grayify(image):
 
 def pixels_to_ascii(image):
     pixels = image.getdata()
-    characters = "".join([ASCII_CHARS[pixel//30] for pixel in pixels])
-    return(characters)
+    ASCII_CHARS_RANDOM = random.sample(ASCII_CHARS, random.randint(2, len(ASCII_CHARS)))
+    if(len(ASCII_CHARS_RANDOM) == 1):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//120] for pixel in pixels])
+        return(characters)
+    elif(len(ASCII_CHARS_RANDOM) == 2):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//160] for pixel in pixels])
+        return(characters)
+    elif(len(ASCII_CHARS_RANDOM) == 3):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//95] for pixel in pixels])
+        return(characters)
+    elif(len(ASCII_CHARS_RANDOM) == 4):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//75] for pixel in pixels])
+        return(characters)
+    elif(len(ASCII_CHARS_RANDOM) == 5):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//65] for pixel in pixels])
+        return(characters)
+    elif(len(ASCII_CHARS_RANDOM) == 6):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//50] for pixel in pixels])
+        return(characters)
+    elif(len(ASCII_CHARS_RANDOM) == 7):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//45] for pixel in pixels])
+        return(characters)
+    elif(len(ASCII_CHARS_RANDOM) == 8):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//40] for pixel in pixels])
+        return(characters)
+    elif(len(ASCII_CHARS_RANDOM) == 9):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//35] for pixel in pixels])
+        return(characters)
+    elif(len(ASCII_CHARS_RANDOM) == 10):
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//30] for pixel in pixels])
+        return(characters)
+    else:
+        characters = "".join([ASCII_CHARS_RANDOM[pixel//30] for pixel in pixels])
+        return(characters)
 
 def main(number, new_width = 150):
     try:

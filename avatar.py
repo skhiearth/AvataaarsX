@@ -2,6 +2,7 @@ import py_avataaars as pa
 from PIL import Image
 from random import randrange
 from artGenerator import main
+import time
 
 # Options
 list_skin_color = ['TANNED', 'YELLOW', 'PALE',' LIGHT', 'BROWN', 'DARK_BROWN', 'BLACK']
@@ -19,20 +20,17 @@ list_top_type = ['NO_HAIR','EYE_PATCH','HAT','HIJAB','TURBAN',
                 'SHORT_HAIR_SHORT_FLAT','SHORT_HAIR_SHORT_ROUND',
                 'SHORT_HAIR_SHORT_WAVED','SHORT_HAIR_SIDES',
                 'SHORT_HAIR_THE_CAESAR','SHORT_HAIR_THE_CAESAR_SIDE_PART']
-list_hair_color = ['AUBURN','BLACK','BLONDE','BLONDE_GOLDEN','BROWN',
-                'BROWN_DARK','PASTEL_PINK','PLATINUM','RED','SILVER_GRAY']
-list_hat_color = ['BLACK','BLUE_01','BLUE_02','BLUE_03','GRAY_01','GRAY_02',
-                'HEATHER','PASTEL_BLUE','PASTEL_GREEN','PASTEL_ORANGE',
-                'PASTEL_RED','PASTEL_YELLOW','PINK','RED','WHITE']
+list_hair_color = ['BLACK']
+list_hat_color = ['BLACK','WHITE']
 
 list_facial_hair_type = ['DEFAULT','BEARD_MEDIUM','BEARD_LIGHT','BEARD_MAJESTIC','MOUSTACHE_FANCY','MOUSTACHE_MAGNUM']
-list_facial_hair_color = ['AUBURN','BLACK','BLONDE','BLONDE_GOLDEN','BROWN','BROWN_DARK','PLATINUM','RED']
+list_facial_hair_color = ['BLACK']
 list_mouth_type = ['DEFAULT','CONCERNED','DISBELIEF','EATING','GRIMACE','SAD','SCREAM_OPEN','SERIOUS','SMILE','TONGUE','TWINKLE','VOMIT']
 list_eye_type = ['DEFAULT','CLOSE','CRY','DIZZY','EYE_ROLL','HAPPY','HEARTS','SIDE','SQUINT','SURPRISED','WINK','WINK_WACKY']
 list_eyebrow_type = ['DEFAULT','DEFAULT_NATURAL','ANGRY','ANGRY_NATURAL','FLAT_NATURAL','RAISED_EXCITED','RAISED_EXCITED_NATURAL','SAD_CONCERNED','SAD_CONCERNED_NATURAL','UNI_BROW_NATURAL','UP_DOWN','UP_DOWN_NATURAL','FROWN_NATURAL']
 list_accessories_type = ['DEFAULT','KURT','PRESCRIPTION_01','PRESCRIPTION_02','ROUND','SUNGLASSES','WAYFARERS']
 list_clothe_type = ['BLAZER_SHIRT','BLAZER_SWEATER','COLLAR_SWEATER','GRAPHIC_SHIRT','HOODIE','OVERALL','SHIRT_CREW_NECK','SHIRT_SCOOP_NECK','SHIRT_V_NECK']
-list_clothe_color = ['BLACK','BLUE_01','BLUE_02','BLUE_03','GRAY_01','GRAY_02','HEATHER','PASTEL_BLUE','PASTEL_GREEN','PASTEL_ORANGE','PASTEL_RED','PASTEL_YELLOW','PINK','RED','WHITE']
+list_clothe_color = ['BLACK', 'WHITE']
 list_clothe_graphic_type = ['BAT','CUMBIA','DEER','DIAMOND','HOLA','PIZZA','RESIST','SELENA','BEAR','SKULL_OUTLINE','SKULL']
 
 # List of created avatars
@@ -83,6 +81,12 @@ def getRandomIndices(number):
         main(number)
 
 if __name__ == "__main__":
-    for i in range(1, 10):
+
+    start = time.time()
+
+    for i in range(1, 1000):
         getRandomIndices(i)
         i = i + 1
+
+    end = time.time()
+    print("Time taken: {} seconds".format(end - start))
