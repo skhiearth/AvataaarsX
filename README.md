@@ -2,7 +2,7 @@
 
 AvataaarX - A scalable NFT art project 
 
-A collection of 1000 randomly generated NFTs can be found in the ```NFT``` folder of this repository.
+A collection of 1000 randomly generated NFTs can be found in the ```NFTs``` folder of this repository.
 
 AvataaarX is an ASCII-based collection of virtual avatars generated using the open-source library of the same name by Pablo Stanley.
 
